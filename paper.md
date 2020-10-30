@@ -23,14 +23,14 @@ affiliations:
    index: 2
  - name: Directorate of Earth Observation Programs, ESRIN, European Space Agency
    index: 3
-date: 03 June 2020
+date: 25 October 2020
 bibliography: paper.bib
 
 ---
 
 # Summary
 
-The role spatial networks, such as streets, play on the human experience cannot be overstated. All of our daily activities fall along, or in close proximity to, roads, bike paths, and subway systems to name a few. Therefore, when performing spatial analysis in many cases considering network space, as opposed to Euclidean space, allows for a more precise representation of daily human action and movement patterns. For example, people generally cannot get to work by driving in a straight line directly from their home, but move along paths within networks. To this end, `spaghetti` (``**SPA**tial **G**rap**H**s: n**ET**works, **T**opology, & **I**nference''), a sub-module in the wider PySAL ecosystem, was developed to address network-centric research questions with a strong focus on spatial analysis [@pysal2007, @pysal2015, @gaboardi2018].
+The role spatial networks, such as streets, play on the human experience cannot be overstated. All of our daily activities fall along, or in close proximity to, roads, bike paths, and subway systems to name a few. Therefore, when performing spatial analysis in many cases considering network space, as opposed to Euclidean space, allows for a more precise representation of daily human action and movement patterns. For example, people generally cannot get to work by driving in a straight line directly from their home, but move along paths within networks. To this end, `spaghetti` (``**spa**tial **g**rap**h**s: n**et**works, **t**opology, & **i**nference''), a sub-module in the wider PySAL ecosystem, was developed to address network-centric research questions with a strong focus on spatial analysis [@pysal2007, @pysal2015, @gaboardi2018].
 
 ---
 
@@ -58,7 +58,7 @@ After the creation of a base network object it can be manipulated, analyzed, and
  * calculating all neighbor distance matrices
     * point type A to point type A (auto)
     * point type A to point type B (cross)
- * simulating point patterns that used within the Network *K* function for cluster analysis [@okabe2012]
+ * simulating point patterns that can be used within the  [*K* function](https://pysal.org/spaghetti/generated/spaghetti.Network.html#spaghetti.Network.GlobalAutoK) for cluster analysis [@okabe2012]
  * splitting the network into (nearly) uniform segments
  * extracting features as `geopandas.GeoDataFrame` objects:
     * network arcs, vertices and point patterns 
@@ -97,7 +97,7 @@ The overview presented here provides a high-level summary of functionality. More
 
 # Planned Enhancements
 
-As with any software project, there are always plans for further improvements and additional functionality. Three such major enhancements are described here. The first addition will likely be network partitioning through use of voronoi diagrams generated in network space. Network-constrained voronoi diagrams can be utilized as tools for analysis in and of themselves and can also be input for further analysis, such as the vornoi extension of the Network *K* function [@okabe2012]. Second, the current algorithm for allocating observations to a network within `spaghetti` allows for points to be snapped to a single location along the nearest network segment. While this is ideal for concrete observations, such as individual crime incidents, multiple network connections for abstract network events, such as census tract centroids, may be more appropriate [@gaboardi2020a]. Finally, the core functionality of `spaghetti` is nearly entirely written with pure Python data structures, which are excellent for code readability and initial development but generally suffer in terms of performance. There are currently several functions that can be utilized with an optional `geopandas` installation, however, further integration with the `pandas` stack has the potential to greatly improve performance.
+As with any software project, there are always plans for further improvements and additional functionality. Three such major enhancements are described here. The first addition will likely be network partitioning through use of voronoi diagrams generated in network space. Network-constrained voronoi diagrams can be utilized as tools for analysis in and of themselves and can also be input for further analysis, such as the voronoi extension of the Network *K* function [@okabe2012]. Second, the current algorithm for allocating observations to a network within `spaghetti` allows for points to be snapped to a single location along the nearest network segment. While this is ideal for concrete observations, such as individual crime incidents, multiple network connections for abstract network events, such as census tract centroids, may be more appropriate [@gaboardi2020a]. Finally, the core functionality of `spaghetti` is nearly entirely written with pure Python data structures, which are excellent for code readability and initial development but generally suffer in terms of performance. There are currently several functions that can be utilized with an optional `geopandas` installation, however, further integration with the `pandas` stack has the potential to greatly improve performance.
 
 # Concluding Remarks
 
